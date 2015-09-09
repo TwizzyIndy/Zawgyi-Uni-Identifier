@@ -48,6 +48,8 @@
             
         }
         
+#pragma mark 2 Chars
+        
         // Nga + YatPint
         
         if ([arrayStrings[x] isEqual: @"\u1004"] && [arrayStrings[x+1] isEqual:@"\u103A"] ) {
@@ -112,6 +114,9 @@
             result = YES;
         }
         
+        
+#pragma mark 3Chars
+        
         // Pa + WaSwale + TaChoungNyin
         
         if ([arrayStrings[x] isEqual: @"\u1015"] && [arrayStrings[x+1] isEqual:@"\u103C"] &&
@@ -167,6 +172,58 @@
             
             result = YES;
         }
+        
+        // Kha + Ha Htoe + Nauk Pyit
+        
+        if ([arrayStrings[x] isEqual: @"\u1001"] && [arrayStrings[x+1] isEqual:@"\u1087"] &&
+            [arrayStrings[x+2] isEqual: @"\u1032"]) {
+            
+            result = YES;
+        }
+        
+        // Da Dway + Thaway Htoe + Tha
+        
+        if ([arrayStrings[x] isEqual: @"\u1012"] && [arrayStrings[x+1] isEqual:@"\u1031"] &&
+            [arrayStrings[x+2] isEqual: @"\u101E"]) {
+            
+            result = YES;
+        }
+        
+        // Aa + Yapa Lat + YaPint
+        
+        if ([arrayStrings[x] isEqual: @"\u1021"] && [arrayStrings[x+1] isEqual:@"\u101A"] &&
+            [arrayStrings[x+2] isEqual: @"\u103A"]) {
+            
+            result = YES;
+        }
+        
+        
+#pragma mark 4Chars
+        
+        // Pha + WaSwale + Sa + YaPint
+        
+        if ([arrayStrings[x] isEqual: @"\u1016"] && [arrayStrings[x+1] isEqual:@"\u103C"] &&
+            [arrayStrings[x+2] isEqual: @"\u1005"] && [arrayStrings[x+3] isEqual:@"\u103A"]) {
+            
+            result = YES;
+        }
+        
+        // La + TaChaungNgyin + Pa + YaPint
+        
+        if ([arrayStrings[x] isEqual: @"\u101C"] && [arrayStrings[x+1] isEqual:@"\u102F"] &&
+            [arrayStrings[x+2] isEqual: @"\u1015"] && [arrayStrings[x+3] isEqual:@"\u103A"]) {
+            
+            result = YES;
+        }
+        
+        // Pa + Lonegyi Tin + TaWinPu + YaPint
+        
+        if ([arrayStrings[x] isEqual: @"\u1015"] && [arrayStrings[x+1] isEqual:@"\u102D"] &&
+            [arrayStrings[x+2] isEqual: @"\u1010"] && [arrayStrings[x+3] isEqual:@"\u103A"]) {
+            
+            result = YES;
+        }
+        
         
         
     }
