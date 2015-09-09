@@ -13,9 +13,74 @@
 -(BOOL) isZawgyi:(NSString *)str
 
 {
-    BOOL result;
+    BOOL result = NO;
     
+    // Convert str to arrays ..
     
+    NSMutableArray* arrayStrings = [NSMutableArray array];
+    
+    for (int i = 0; i < [arrayStrings count]; i++) {
+        
+        
+        NSString* curChar  = arrayStrings[i];
+        NSString* prevChar = arrayStrings[i-1];
+        
+        NSString* nextChar = arrayStrings[i+1];
+        NSString* next2Char= arrayStrings[i+2];
+        NSString* next3Char= arrayStrings[i+3];
+        
+        
+        // if first char is YaYint or ThaWayHtoe
+        
+        if (i == 0 && ( [curChar isEqual:@"\u1031"] || [curChar isEqual:@"\u103B"] ||
+                         [curChar isEqual:@"\u107E"] || [curChar isEqual:@"\u107F"] ||
+                         [curChar isEqual:@"\u1080"]
+                       )
+            ) {
+            
+            return YES;
+            
+        }
+        
+        // space after some syllables
+        
+        if ( [curChar isEqual:@" " ] && ( [nextChar isEqual:@"\u1032"]||
+                                         [nextChar isEqual:@"\u103B"] ||
+                                         [nextChar isEqual:@"\u107E"] ||
+                                         [nextChar isEqual:@"\u107F"] ||
+                                         [nextChar isEqual:@"\u1080"]    )) {
+            return YES;
+            
+        }
+        
+        // if the last char is Athat
+        
+        if (i == ( [arrayStrings count] - 1 ) && [curChar isEqual:@"\u1039"] ) {
+            
+            return YES;
+        }
+        
+        // Nga + AtThat
+        
+        if ([curChar isEqual:@"\u1004"] && [nextChar isEqual:@"\u1039"] ) {
+            return YES;
+        }
+        
+        // Ya + AtThat
+        
+        if ([curChar isEqual:@"\u101A"] && [nextChar isEqual:@"\u1039"]) {
+            return YES;
+        }
+        
+        // Nya + AtThat
+        
+        if ([curChar isEqual:@"\u100A"] && [nextChar isEqual:@"\u1039"]) {
+            return YES;
+        }
+        
+        
+        
+    }
     
     
     
@@ -31,7 +96,7 @@
     
     NSMutableArray* arrayStrings = [NSMutableArray array];
     
-    for (int i = 0; i < [str length]; i++) {
+    for (int i = 0; i < [arrayStrings count]; i++) {
         
         NSString* ch = [str substringWithRange:NSMakeRange(i, 1)];
         [arrayStrings addObject:ch];

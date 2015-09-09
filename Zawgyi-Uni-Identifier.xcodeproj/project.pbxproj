@@ -52,8 +52,8 @@
 				B689579B1B9D84B4009165F5 /* Supporting Files */,
 				B68957A41B9D8538009165F5 /* Zg-Uni-Identifier.h */,
 				B68957A51B9D8538009165F5 /* Zg-Uni-Identifier.m */,
-				B68957A31B9D84E4009165F5 /* harfbuzz-myanmar-fezu_ZawgyiBased.c */,
 				B68957A21B9D84E4009165F5 /* harfbuzz-myanmar-fezu_UnicodeBased.c */,
+				B68957A31B9D84E4009165F5 /* harfbuzz-myanmar-fezu_ZawgyiBased.c */,
 			);
 			path = "Zawgyi-Uni-Identifier";
 			sourceTree = "<group>";
@@ -259,6 +259,7 @@
 				B68957A11B9D84B4009165F5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
