@@ -136,6 +136,37 @@
             result = YES;
         }
         
+        // La + Ya Pa Lat + Ya Pin
+        
+        if ([arrayStrings[x] isEqual: @"\u101C"] && [arrayStrings[x+1] isEqual:@"\u101A"] &&
+            [arrayStrings[x+2] isEqual: @"\u103A"]) {
+            
+            result = YES;
+        }
+        
+        // Pa + Da Dwae + Thaway Htoe
+        
+        if ([arrayStrings[x] isEqual: @"\u1015"] && [arrayStrings[x+1] isEqual:@"\u1012"] &&
+            [arrayStrings[x+2] isEqual: @"\u1031"]) {
+            
+            result = YES;
+        }
+        
+        // Sa + Ka + Yapint
+        
+        if ([arrayStrings[x] isEqual: @"\u1006"] && [arrayStrings[x+1] isEqual:@"\u1000"] &&
+            [arrayStrings[x+2] isEqual: @"\u103A"]) {
+            
+            result = YES;
+        }
+        
+        // La + Ka + Yapint
+        
+        if ([arrayStrings[x] isEqual: @"\u101C"] && [arrayStrings[x+1] isEqual:@"\u1000"] &&
+            [arrayStrings[x+2] isEqual: @"\u103A"]) {
+            
+            result = YES;
+        }
         
         
     }
