@@ -19,6 +19,14 @@
     
     NSMutableArray* arrayStrings = [NSMutableArray array];
     
+    for (int i = 0; i < str.length; i++) {
+        
+        NSString* ch = [str substringWithRange:NSMakeRange(i, 1)];
+        [arrayStrings addObject:ch];
+        
+    }
+    
+    
     for (int i = 0; i < [arrayStrings count]; i++) {
         
         
@@ -78,6 +86,85 @@
             return YES;
         }
         
+        // Yapint + Yaychar
+        
+        if ([curChar isEqual:@"\u103A"] && [nextChar isEqual:@"\u102C"]) {
+            return YES;
+        }
+        
+        // YaKouk + YaYint
+        
+        if ([curChar isEqual:@"\u101B"] && [nextChar isEqual:@"\u103B"]) {
+            return YES;
+        }
+        
+        // YayChar + ThawayHtoe
+        
+        if ([curChar isEqual:@"\u102C"] && [nextChar isEqual:@"\u1031"]) {
+            return YES;
+        }
+        
+        // MoukCha + ThawayHtoe
+        
+        if ([curChar isEqual:@"\u102B"] && [nextChar isEqual:@"\u1031"]) {
+            return YES;
+        }
+        
+        // TaChoung Nyin + ThawayHtoe
+        
+        if ([curChar isEqual:@"\u102F"] && [nextChar isEqual:@"\u1031"]) {
+            return YES;
+        }
+        
+        // NaChoung Nyin + ThawayHtoe
+        
+        if ([curChar isEqual:@"\u1030"] && [nextChar isEqual:@"\u1031"]) {
+            return YES;
+        }
+        
+        // YaPint + Thaway Htoe
+        
+        if ([curChar isEqual:@"\u103A"] && [nextChar isEqual:@"\u1031"]) {
+            return YES;
+        }
+        
+        // Space + ThaWayHtoe
+        
+        if ([curChar isEqual:@" "] && [nextChar isEqual:@"\u1031"]) {
+            return YES;
+        }
+        
+        // AtThat + ThWayHtoe
+        
+        if ([curChar isEqual:@"\u1039"] && [nextChar isEqual:@"\u1031"]) {
+            return YES;
+        }
+        
+        // WitSaPouk + ThaWayHtoe
+        if ([curChar isEqual:@"\u1038"] && [nextChar isEqual:@"\u1031"]) {
+            return YES;
+        }
+        
+        // LoneGeeTin + ThaWayHtoe
+        
+        if ([curChar isEqual:@"\u102D"] && [nextChar isEqual:@"\u1031"]) {
+            return YES;
+        }
+        
+        // LoneGeeTinSanKhat + ThaWayHtoe
+        
+        if ([curChar isEqual:@"\u1030"] && [nextChar isEqual:@"\u1031"]) {
+            return YES;
+        }
+        
+        // NoukPyit + ThaWayHtoe
+        
+        if ([curChar isEqual:@"\u1030"] && [nextChar isEqual:@"\u1031"]) {
+            return YES;
+        }
+        
+        // ThaWayHtole
+        
         
         
     }
@@ -96,7 +183,7 @@
     
     NSMutableArray* arrayStrings = [NSMutableArray array];
     
-    for (int i = 0; i < [arrayStrings count]; i++) {
+    for (int i = 0; i < str.length; i++) {
         
         NSString* ch = [str substringWithRange:NSMakeRange(i, 1)];
         [arrayStrings addObject:ch];
