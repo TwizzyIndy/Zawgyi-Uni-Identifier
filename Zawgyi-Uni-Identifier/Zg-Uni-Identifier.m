@@ -17,21 +17,22 @@
     
     // Convert str to arrays ..
     
+    
+    
     NSMutableArray* arrayStrings = [NSMutableArray array];
     
-    for (int i = 0; i < str.length; i++) {
+    for (int i = 0; i < [str length]; i++) {
         
         NSString* ch = [str substringWithRange:NSMakeRange(i, 1)];
         [arrayStrings addObject:ch];
         
     }
     
-    
     for (int i = 0; i < [arrayStrings count]; i++) {
         
         
         NSString* curChar  = arrayStrings[i];
-        NSString* prevChar = arrayStrings[i-1];
+        //        NSString* prevChar = arrayStrings[i-1];
         
         NSString* nextChar = arrayStrings[i+1];
         NSString* next2Char= arrayStrings[i+2];
@@ -41,8 +42,8 @@
         // if first char is YaYint or ThaWayHtoe
         
         if (i == 0 && ( [curChar isEqual:@"\u1031"] || [curChar isEqual:@"\u103B"] ||
-                         [curChar isEqual:@"\u107E"] || [curChar isEqual:@"\u107F"] ||
-                         [curChar isEqual:@"\u1080"]
+                       [curChar isEqual:@"\u107E"] || [curChar isEqual:@"\u107F"] ||
+                       [curChar isEqual:@"\u1080"]
                        )
             ) {
             
@@ -165,8 +166,189 @@
         
         // ThaWayHtole
         
+        // ThaWayHtole + YaYint
+        
+        if ([curChar isEqual:@"\u1031"] && ( [nextChar isEqual:@"\u103B"] || [nextChar isEqual:@"\u107E"] ) ) {
+            
+            return YES;
+        }
+        
+        // AThat
+        
+        // AThat + PokeMa
+        if( [curChar isEqual:@"\u1039"] && [nextChar isEqual:@"\u104B"] ) {
+            return YES;
+        }
+        
+        // AThat + AukKaMyint
+        if( [curChar isEqual:@"\u1039"] && [nextChar isEqual:@"\u1037"]) {
+            return YES;
+        }
+        
+        // AThat + YaKauk
+        
+        if ([curChar isEqual:@"1039"] && [nextChar isEqual:@"101B"]) {
+            return YES;
+        }
+        
+        // AThat + Space
+        
+        if ([curChar isEqual:@"\u1039"] && [nextChar isEqual:@" "]) {
+            return YES;
+        }
+        
+        //  AThat + WitSaPauk
+        
+        if ([curChar isEqual:@"\u1039"] && [nextChar isEqual:@"\u1038"]) {
+            return YES;
+        }
+        
+        // AThat + YaYint
+        
+        if ([curChar isEqual:@"\u1039"] && [nextChar isEqual:@"\u103B"]) {
+            return YES;
+        }
+        
+        // AThat + YaYint
+        
+        if ([curChar isEqual:@"\u1039"] && [nextChar isEqual:@"\u107E"]) {
+            return  YES;
+        }
+        
+        // AThat + YaYint
+        
+        if ([curChar isEqual:@"\u1039"] && [nextChar isEqual:@"\u107F"]) {
+            return YES;
+        }
+        
+        // AThat + YaYint
+        
+        if ([curChar isEqual:@"\u1039"] && [nextChar isEqual:@"\u1080"]) {
+            return YES;
+        }
+        
+        // AThat + ThaWayHtole
+        
+        if ([curChar isEqual:@"\u1039"] && [nextChar isEqual:@"\u1031"]) {
+            return YES;
+        }
+        
+        // AThat + x + NaukPyit
+        
+        if ([curChar isEqual:@"\u1039"] && [next2Char isEqual:@"\u1032"] ) {
+            return YES;
+        }
+        
+        // AThat + x + LoneGyiTin
+        
+        if ([curChar isEqual:@"\u1039"] && [next2Char isEqual:@"\u102D"]) {
+            return YES;
+        }
+        
+        // AThat + x + WaSwal
+        
+        if ([curChar isEqual:@"\u1039"] && [next2Char isEqual:@"\u103C"]) {
+            return YES;
+        }
+        
+        // AThat + x + HaHtole
+        
+        if ([curChar isEqual:@"\u1039"] && [next2Char isEqual:@"\u103D"]) {
+            return YES;
+        }
+        
+        // AThat + x + TaChaungNgin
+        
+        if ([curChar isEqual:@"\u1039"] && [next2Char isEqual:@"\u102F"]) {
+            return YES;
+        }
+        
+        // AThat + x + NaChaungNgin
+        
+        if ([curChar isEqual:@"\u1039"] && [next2Char isEqual:@"\u1030"]) {
+            return YES;
+        }
+        
+        // AThat + x + YaPint
+        
+        if ([curChar isEqual:@"\u1039"] && [next2Char isEqual:@"\u103A"]) {
+            return YES;
+        }
+        
+        // AThat + x + ThaWayHtole
+        
+        if ([curChar isEqual:@"\u1039"] && [next2Char isEqual:@"\u1031"]) {
+            return YES;
+        }
+        
+        // AThat + x + YayCha + WitSaPauk
+        
+        if ([curChar isEqual:@"\u1039"] && [next2Char isEqual:@"\u102C"]
+            && [next3Char isEqual:@"\u1038"]) {
+            return YES;
+        }
+        
+        // AThat + x + MaukCha + WitSaPauk
+        
+        if ([curChar isEqual:@"\u1039"] && [next2Char isEqual:@"\u102B"]
+            && [next3Char isEqual:@"\u1038"]) {
+            return YES;
+        }
         
         
+        // WitSaPauk
+        
+        // WitSaPauk + YaYint
+        
+        if ([curChar isEqual:@"\u1038"] && [nextChar isEqual:@"\u103B"]) {
+            return YES;
+        }
+        
+        // WitSaPauk + YaYint
+        
+        if ([curChar isEqual:@"\u1038"] && [nextChar isEqual:@"\u107E"] ) {
+            return YES;
+        }
+        
+        // WitSaPauk + YaYint
+        
+        if ([curChar isEqual:@"\u1038"] && [nextChar isEqual:@"\u107F"]) {
+            return YES;
+        }
+        
+        // WitSaPauk + YaYint
+        
+        if ([curChar isEqual:@"\u1038"] && [nextChar isEqual:@"\u1080"]) {
+            return YES;
+        }
+        
+        // WitSaPauk + ThaWayHtole
+        
+        if ([curChar isEqual:@"\u1038"] && [nextChar isEqual:@"\u1031"]) {
+            return YES;
+        }
+        
+        // some other chars
+        
+        // YaPint + x + AThat
+        
+        if ([curChar isEqual:@"\u103A"] && [next2Char isEqual:@"\u1039"]) {
+            return YES;
+        }
+        
+        // Ma + HaHtole + YayChar
+        
+        if ([curChar isEqual:@"\u1019"] && [nextChar isEqual:@"\u103D"]
+            && [next2Char isEqual:@"\u102C"]) {
+            return YES;
+        }
+        
+        // YaKouk + HaHtole + LoneGyiTin
+        
+        if (( [curChar isEqual:@"\u101B"] || [curChar isEqual:@"\u1090"] )
+            && [nextChar isEqual:@"\u103D"] && [next2Char isEqual:@"\u102D"]) {
+            return YES;
+        }
     }
     
     
@@ -183,7 +365,7 @@
     
     NSMutableArray* arrayStrings = [NSMutableArray array];
     
-    for (int i = 0; i < str.length; i++) {
+    for (int i = 0; i < [str length]; i++) {
         
         NSString* ch = [str substringWithRange:NSMakeRange(i, 1)];
         [arrayStrings addObject:ch];
@@ -192,7 +374,7 @@
     
     // Check all of chars in arrayStrings ...
     
-    for (int x=0; x < str.length; ++x) {
+    for (int x=0; x < [str length]; ++x) {
         
         if ([arrayStrings[x]  isEqual: @"\u103E"]) { // wrong Htat-Htoe
             
